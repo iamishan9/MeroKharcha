@@ -25,6 +25,10 @@
          <activity android:name=".ChangePass">
 
          </activity>
+        <activity android:name=".add_trans"
+            android:theme="@style/AppTheme.popup">
+
+            </activity>
     </application>
 
 </manifest>

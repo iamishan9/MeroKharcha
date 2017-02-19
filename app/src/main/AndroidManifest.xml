@@ -29,6 +29,8 @@
             android:theme="@style/AppTheme.popup">
 
             </activity>
+
+        <activity android:name=".calculator"></activity>
     </application>
 
 </manifest>

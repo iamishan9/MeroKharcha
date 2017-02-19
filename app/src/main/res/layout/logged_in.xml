@@ -52,4 +52,16 @@
         android:layout_marginLeft="8dp"
         app:layout_constraintVertical_bias="0.92"
         app:layout_constraintHorizontal_bias="0.91" />
+
+    <Button
+        android:text="Calculator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonCalc"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/button4" />
 </android.support.constraint.ConstraintLayout>

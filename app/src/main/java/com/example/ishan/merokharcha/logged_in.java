@@ -13,6 +13,7 @@ import android.widget.Button;
 public class logged_in extends AppCompatActivity {
 
     Button button3;
+    Button buttonCalc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,13 +21,26 @@ public class logged_in extends AppCompatActivity {
 
 
         button3 =(Button)findViewById(R.id.button3);
-
+        buttonCalc=(Button)findViewById(R.id.buttonCalc);
         button3.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(), add_trans.class);
-                startActivity(i);
+                                       @Override
+                                       public void onClick(View v) {
+                                           Intent i = new Intent(getApplicationContext(), add_trans.class);
+                                           startActivity(i);
+                                       }
+                                   });
+
+
+
+                buttonCalc.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        Intent i= new Intent(getApplicationContext(), calculator.class);
+                        startActivity(i);
+
+
             }
 
 

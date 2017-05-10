@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Mero Kharcha</string>
+    <string-array name="expenditure_type">
+        <item>Food</item>
+        <item>Transportation</item>
+        <item>Education</item>
+        <item>Clothes</item>
+        <item>Appliances</item>
+        <item>Miscellaneous</item>
+
+    </string-array>
 </resources>

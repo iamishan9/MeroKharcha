@@ -79,7 +79,7 @@ public class add_trans extends AppCompatActivity implements OnItemSelectedListen
                     a=a+num;
                 else
                     m=m+num;
-
+//
                 Toast.makeText(add_trans.this,String.valueOf(m),Toast.LENGTH_LONG).show();
     }
         });

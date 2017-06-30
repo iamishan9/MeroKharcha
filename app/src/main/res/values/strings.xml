@@ -6,7 +6,8 @@
         <item>Education</item>
         <item>Clothes</item>
         <item>Appliances</item>
-        <item>Miscellaneous</item>
+        <item>Bills and Utilities</item>
+        <item>Other</item>
 
     </string-array>
 </resources>

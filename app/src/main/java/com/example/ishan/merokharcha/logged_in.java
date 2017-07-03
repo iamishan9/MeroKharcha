@@ -14,6 +14,7 @@ public class logged_in extends AppCompatActivity {
 
     Button button3;
     Button buttonCalc;
+    Button button4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +22,7 @@ public class logged_in extends AppCompatActivity {
 
 
         button3 =(Button)findViewById(R.id.button3);
+        button4 =(Button)findViewById(R.id.button4);
         buttonCalc=(Button)findViewById(R.id.buttonCalc);
         button3.setOnClickListener(new View.OnClickListener() {
 
@@ -31,7 +33,14 @@ public class logged_in extends AppCompatActivity {
                                        }
                                    });
 
+        button4.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), menu.class);
+                startActivity(i);
+            }
+        });
 
                 buttonCalc.setOnClickListener(new View.OnClickListener() {
 

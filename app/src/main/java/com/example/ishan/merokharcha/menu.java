@@ -17,6 +17,7 @@ public class menu extends AppCompatActivity {
 
     DatabaseHelper myDb;
     Button view;
+    Button change;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +26,24 @@ public class menu extends AppCompatActivity {
 
         myDb = new DatabaseHelper(this);
         view = (Button) findViewById(R.id.button8);
+        change = (Button) findViewById(R.id.button5);
         viewAll();
     }
 
     public void viewAll() {
+
+        change.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+
+                    }
+                }
+        );
+
+
+
         view.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -44,7 +59,8 @@ public class menu extends AppCompatActivity {
                        while (show.moveToNext()) {
                             buffer.append(" ID : " + show.getString(0) + " \n ");
                             buffer.append(" KharchaType : " + show.getString(1) + " \n ");
-                            buffer.append(" Kharcha : " +  show.getString(2) + " \n\n ");
+                           buffer.append("PreviousKharcha: "+ show.getString(2)+ "\n");
+                            buffer.append(" Kharcha : " +  show.getString(3) + " \n\n ");
                         }
 
                         showMessage("Kharcha",buffer.toString());

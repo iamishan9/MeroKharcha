@@ -1,7 +1,10 @@
 package com.example.ishan.merokharcha;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -30,10 +33,15 @@ public class add_trans extends AppCompatActivity implements OnItemSelectedListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        myDb = new DatabaseHelper(this);
+
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_trans);
 
-       myDb = new DatabaseHelper(this);
+
 
         editText = (EditText)findViewById(R.id.editText2);
        // button = (Button)findViewById(R.id.button7);
@@ -56,6 +64,16 @@ public class add_trans extends AppCompatActivity implements OnItemSelectedListen
     public void onItemSelected(AdapterView<?> parent, View view, final int position, long id) {
      //  Toast.makeText(this,String.valueOf(position),Toast.LENGTH_LONG).show();
 
+
+
+
+
+
+
+
+
+
+
         final String selected= parent.getItemAtPosition(position).toString();
 
         button = (Button)findViewById(R.id.button7);
@@ -64,13 +82,45 @@ public class add_trans extends AppCompatActivity implements OnItemSelectedListen
             @Override
             public void onClick(View v) {
 
+
+
+                Calendar check = Calendar.getInstance();
+                int thisMonth = check.get(Calendar.MONTH);
+
+                SharedPreferences sharedPref = getSharedPreferences("Date", Context.MODE_PRIVATE);
+                //String month = sharedPref.getString("month","");
+
+                int month = sharedPref.getInt("month",0);
+
+                if(thisMonth>month)
+                {
+                    myDb.copyData();
+                    myDb.deleteData();
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
                 Cursor res = myDb.showKharcha();
 if(res.getCount()==0)
 {int num = Integer.parseInt(editText.getText().toString());
 
-    boolean ifAdded = myDb.insertData(String.valueOf(position),selected,num);
-    if(ifAdded == true)
-        Toast.makeText(add_trans.this,"Kharcha added to "+selected+" successfully",Toast.LENGTH_LONG).show();
+    boolean ifAdded = myDb.insertData(String.valueOf(position),selected,0,num);
+    if(ifAdded == true) {
+        Toast.makeText(add_trans.this, "Kharcha added to " + selected + " successfully", Toast.LENGTH_LONG).show();
+        Toast.makeText(add_trans.this,String.valueOf(month),Toast.LENGTH_LONG).show();
+
+
+    }
   //  else
       // Toast.makeText(add_trans.this,"Kharcha couldn't be added to "+selected,Toast.LENGTH_LONG).show();
 
@@ -82,8 +132,8 @@ else
         if(res.getInt(0)==position)
         {int num = Integer.parseInt(editText.getText().toString());
 
-            num = num + res.getInt(2);
-            boolean ifAdded = myDb.updateData(String.valueOf(position),selected,num);
+            num = num + res.getInt(3);
+            boolean ifAdded = myDb.updateData(String.valueOf(position),selected,res.getInt(2),num);
             if(ifAdded == true)
                 Toast.makeText(add_trans.this,"Kharcha on "+selected+" updated successfully",Toast.LENGTH_LONG).show();
             //else
@@ -92,10 +142,12 @@ else
         else
         {int num = Integer.parseInt(editText.getText().toString());
 
-            boolean ifAdded = myDb.insertData(String.valueOf(position),selected,num);
-            if(ifAdded == true)
-                Toast.makeText(add_trans.this,"Kharcha added to "+selected+" successfully",Toast.LENGTH_LONG).show();
-            //else
+            boolean ifAdded = myDb.insertData(String.valueOf(position),selected,0,num);
+            if(ifAdded == true) {
+                Toast.makeText(add_trans.this, "Kharcha added to " + selected + " successfully", Toast.LENGTH_LONG).show();
+                Toast.makeText(add_trans.this,String.valueOf(month),Toast.LENGTH_LONG).show();
+
+            }//else
                 //Toast.makeText(add_trans.this,"Kharcha couldn't be added to "+selected,Toast.LENGTH_LONG).show();
         }
     }

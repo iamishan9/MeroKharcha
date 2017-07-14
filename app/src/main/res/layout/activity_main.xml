@@ -5,7 +5,8 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ishan.merokharcha.MainActivity">
+    tools:context="com.example.ishan.merokharcha.MainActivity"
+    android:background="#C2E459">
 
     <EditText
         android:layout_width="wrap_content"
@@ -20,6 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:theme="@style/MyButton"
         android:text="Enter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,6 +51,7 @@
         android:layout_marginRight="16dp" />
 
     <Button
+        android:theme="@style/MyButton"
         android:text="Change"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

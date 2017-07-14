@@ -3,24 +3,20 @@ package com.example.ishan.merokharcha;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.Toast;
+
 
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.highlight.Highlight;
-import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-import static com.github.mikephil.charting.data.PieDataSet.*;
 
 /**
  * Created by Ishan on 7/14/2017.
@@ -74,13 +70,18 @@ private static String TAG="PieChart";
     }
 
 
+    Description description = new Description();
+    description.setTextColor(ColorTemplate.VORDIPLOM_COLORS[2]);
+    description.setText("Kharcha data");
+    pieChart.setDescription(description);
 
 
 
 
 
-    //pieChart.setDescription("Kharcha of the month ");
-    pieChart.setRotationEnabled(true);
+
+
+    pieChart.setRotationEnabled(false);
     //pieChart.setUsePercentValues(true);
     //pieChart.setHoleColor(Color.WHITE);
     pieChart.setCenterTextColor(Color.BLACK);
@@ -88,6 +89,7 @@ private static String TAG="PieChart";
     pieChart.setTransparentCircleAlpha(0);
     pieChart.setCenterText("Kharcha");
     pieChart.setCenterTextSize(10);
+    pieChart.setDrawSliceText(false);
     //pieChart.setDrawEntryLabels(true);
     //pieChart.setEntryLabelTextSize(20);
 
@@ -125,10 +127,10 @@ private static String TAG="PieChart";
 
 
         ArrayList<PieEntry> pieEntry= new ArrayList<>();
-        //ArrayList<String> xEntry = new ArrayList<>();
+
 
         for( i =0;i < yData.length;i++){
-           //yData[i] = yData[i]*100/total;
+
             pieEntry.add(new PieEntry(yData[i],xData[i]));
         }
 

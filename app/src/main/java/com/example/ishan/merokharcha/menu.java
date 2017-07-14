@@ -1,5 +1,6 @@
 package com.example.ishan.merokharcha;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -18,6 +19,7 @@ public class menu extends AppCompatActivity {
     DatabaseHelper myDb;
     Button view;
     Button change;
+    Button chart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class menu extends AppCompatActivity {
         myDb = new DatabaseHelper(this);
         view = (Button) findViewById(R.id.button8);
         change = (Button) findViewById(R.id.button5);
+        chart = (Button) findViewById(R.id.button10);
         viewAll();
     }
 
@@ -41,6 +44,22 @@ public class menu extends AppCompatActivity {
                     }
                 }
         );
+
+
+        chart.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(getApplicationContext(), piechart.class);
+                        startActivity(i);
+
+                    }
+                }
+        );
+
+
+
+
 
 
 

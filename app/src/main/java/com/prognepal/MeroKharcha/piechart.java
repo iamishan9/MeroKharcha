@@ -1,10 +1,11 @@
-package com.example.ishan.merokharcha;
+package com.prognepal.MeroKharcha;
 
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+
 
 
 import com.github.mikephil.charting.charts.PieChart;
@@ -106,6 +107,10 @@ private static String TAG="PieChart";
         myDb = new DatabaseHelper(this);
         Cursor pie = myDb.showKharcha();
 
+
+
+
+
         String[] xData = new String[pie.getCount()];
         float[] yData = new float[pie.getCount()];
         int i = 0;
@@ -135,20 +140,21 @@ private static String TAG="PieChart";
         }
 
 
-//create the data set
+        //create the data set
         PieDataSet pieDataSet = new PieDataSet(pieEntry,"KHARCHA");
         pieDataSet.setSliceSpace(2);
         pieDataSet.setValueTextSize(12);
 
         //add colors to dataset
         ArrayList<Integer> colors = new ArrayList<>();
-       // colors.add(Color.GRAY);
+        colors.add(Color.GRAY);
         colors.add(Color.BLUE);
         colors.add(Color.RED);
         colors.add(Color.GREEN);
         colors.add(Color.CYAN);
         colors.add(Color.YELLOW);
         colors.add(Color.MAGENTA);
+        colors.add(Color.DKGRAY);
 
         pieDataSet.setColors(colors);
 

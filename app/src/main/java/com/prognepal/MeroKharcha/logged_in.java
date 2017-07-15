@@ -1,4 +1,4 @@
-package com.example.ishan.merokharcha;
+package com.prognepal.MeroKharcha;
 
 /**
  * Created by Ishan on 2/13/2017.
@@ -9,10 +9,11 @@ import android.content.SharedPreferences;
 import android.icu.util.Calendar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.TextView;
+
+
 
 
 public class logged_in extends AppCompatActivity {
@@ -20,6 +21,8 @@ public class logged_in extends AppCompatActivity {
     Button button3;
     Button buttonCalc;
     Button button4;
+    TextView remain;
+    TextView totkh;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +31,24 @@ public class logged_in extends AppCompatActivity {
 
 
 
+
+
+        remain = (TextView) findViewById(R.id.textView12);
+        totkh = (TextView) findViewById(R.id.textView13);
+
+        SharedPreferences sharedPref = getSharedPreferences("Budget", Context.MODE_PRIVATE);
+        int  bud= sharedPref.getInt("paisa",0);
+        int rema = sharedPref.getInt("rema",0);
+        int tot = sharedPref.getInt("tot",0);
+
+        rema = bud-tot;
+       SharedPreferences.Editor editrema = sharedPref.edit();
+
+        editrema.putInt("rema", rema);
+        editrema.apply();
+
+        remain.setText("Rs. "+String.valueOf(rema));
+        totkh.setText("Rs. "+String.valueOf(tot));
 
 
 

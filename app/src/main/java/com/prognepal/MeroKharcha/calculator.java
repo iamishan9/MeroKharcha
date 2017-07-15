@@ -1,4 +1,4 @@
-package com.example.ishan.merokharcha;
+package com.prognepal.MeroKharcha;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+
 
 /**
  * Created by Ishan on 2/19/2017.

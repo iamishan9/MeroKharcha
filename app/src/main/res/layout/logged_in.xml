@@ -5,28 +5,32 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C2E459">
+    android:background="#4FBF40">
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="99dp"
-        android:layout_height="58dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintHorizontal_bias="0.376"
-        app:layout_constraintLeft_toRightOf="@+id/textView12"
+        android:layout_width="180dp"
+        android:layout_height="46dp"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:layout_marginRight="-6dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        android:layout_marginBottom="37dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="143dp"
-        android:layout_height="25dp"
-        android:layout_marginRight="54dp"
-        android:text="TOTAL EXPENSE"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView10"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:layout_width="145dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:text="TOTAL KHARCHA THIS MONTH"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/textView13"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:theme="@style/MyButton"
@@ -91,21 +95,32 @@
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="82dp"
-        android:layout_height="27dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="8dp"
-        android:text="BUDGET"
-        app:layout_constraintHorizontal_bias="0.087"
+        android:layout_width="145dp"
+        android:layout_height="37dp"
+        android:text="REMAINING BUDGET"
+        android:textAlignment="center"
+        android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/textView11"
-        tools:layout_editor_absoluteY="16dp" />
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="99dp"
-        android:layout_height="58dp"
-        android:layout_marginLeft="45dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView13"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_width="180dp"
+        android:layout_height="46dp"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/textView13"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_marginBottom="37dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2" />
 </android.support.constraint.ConstraintLayout>

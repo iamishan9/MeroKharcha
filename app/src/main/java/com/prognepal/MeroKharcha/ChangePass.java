@@ -1,4 +1,4 @@
-package com.example.ishan.merokharcha;
+package com.prognepal.MeroKharcha;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import static android.widget.Toast.*;
+
 
 /**
  * Created by Ishan on 2/17/2017.

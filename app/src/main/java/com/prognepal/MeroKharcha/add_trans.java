@@ -1,16 +1,14 @@
-package com.example.ishan.merokharcha;
+package com.prognepal.MeroKharcha;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.animation.Interpolator;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -18,6 +16,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+
 
 /**
  * Created by Ishan on 2/17/2017.
@@ -87,6 +87,16 @@ public class add_trans extends AppCompatActivity implements OnItemSelectedListen
                 Calendar check = Calendar.getInstance();
                 int thisMonth = check.get(Calendar.MONTH);
 
+                SharedPreferences sharedPrefe = getSharedPreferences("Budget", Context.MODE_PRIVATE);
+                int tot = sharedPrefe.getInt("tot",0);
+                int xy = tot + Integer.parseInt(editText.getText().toString());
+
+                SharedPreferences.Editor editrema =  sharedPrefe.edit();
+
+                editrema.putInt("tot", xy);
+                editrema.apply();
+
+
                 SharedPreferences sharedPref = getSharedPreferences("Date", Context.MODE_PRIVATE);
                 //String month = sharedPref.getString("month","");
 
@@ -117,7 +127,7 @@ if(res.getCount()==0)
     boolean ifAdded = myDb.insertData(String.valueOf(position),selected,0,num);
     if(ifAdded == true) {
         Toast.makeText(add_trans.this, "Kharcha added to " + selected + " successfully", Toast.LENGTH_LONG).show();
-        Toast.makeText(add_trans.this,String.valueOf(month),Toast.LENGTH_LONG).show();
+
 
 
     }
@@ -147,8 +157,7 @@ else
                 Toast.makeText(add_trans.this, "Kharcha added to " + selected + " successfully", Toast.LENGTH_LONG).show();
                 Toast.makeText(add_trans.this,String.valueOf(month),Toast.LENGTH_LONG).show();
 
-            }//else
-                //Toast.makeText(add_trans.this,"Kharcha couldn't be added to "+selected,Toast.LENGTH_LONG).show();
+            }
         }
     }
 }

@@ -5,8 +5,8 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ishan.merokharcha.MainActivity"
-    android:background="#C2E459">
+    tools:context="com.prognepal.MeroKharcha.MainActivity"
+    android:background="#4FBF40">
 
     <EditText
         android:layout_width="wrap_content"

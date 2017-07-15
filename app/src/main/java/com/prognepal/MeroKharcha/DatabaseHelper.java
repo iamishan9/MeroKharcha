@@ -1,4 +1,4 @@
-package com.example.ishan.merokharcha;
+package com.prognepal.MeroKharcha;
 
 import android.content.ContentValues;
 import android.content.Context;

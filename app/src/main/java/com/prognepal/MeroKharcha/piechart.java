@@ -1,5 +1,6 @@
 package com.prognepal.MeroKharcha;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -115,15 +116,18 @@ private static String TAG="PieChart";
         float[] yData = new float[pie.getCount()];
         int i = 0;
         float total = 0;
+        Intent mIntent = getIntent();
+        int pos = mIntent.getIntExtra("pos", 0);
         while (pie.moveToNext()){
-            String kname = pie.getString(1);
-            Float kh= pie.getFloat(3);
-            float kharcha = kh.floatValue();
-            total = total + kharcha ;
-            xData[i]=kname;
-            yData[i]=kharcha;
-            i++;
-
+            if(pie.getInt(3)==pos) {
+                String kname = pie.getString(1);
+                Float kh = pie.getFloat(2);
+                float kharcha = kh.floatValue();
+                total = total + kharcha;
+                xData[i] = kname;
+                yData[i] = kharcha;
+                i++;
+            }
 
         }
 

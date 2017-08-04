@@ -62,7 +62,7 @@ public class logged_in extends AppCompatActivity {
 
                                        @Override
                                        public void onClick(View v) {
-                                           Calendar calendar = Calendar.getInstance();
+                                        /*   Calendar calendar = Calendar.getInstance();
 
 
                                            int thisMonth = calendar.get(Calendar.MONTH);
@@ -81,7 +81,7 @@ public class logged_in extends AppCompatActivity {
                                                editor.apply();
 
                                            }
-                                           Intent i = new Intent(getApplicationContext(), add_trans.class);
+                                          */ Intent i = new Intent(getApplicationContext(), add_trans.class);
                                            startActivity(i);
                                        }
                                    });

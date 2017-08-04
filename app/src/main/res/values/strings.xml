@@ -1,16 +1,19 @@
 <resources>
     <string name="app_name">Mero Kharcha</string>
-    <string-array name="expenditure_type">
+    <string-array name="expenditure_month">
 
-        <item>Grocery</item>
-        <item>Restaurant/Cafe</item>
-        <item>Transportation</item>
-        <item>Education</item>
-        <item>Clothes</item>
-        <item>Appliances</item>
-        <item>Cookery</item>
-        <item>Bills and Utilities</item>
-
+        <item>January</item>
+        <item>February/Cafe</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
 
     </string-array>
 </resources>
